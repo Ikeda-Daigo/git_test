@@ -53,7 +53,7 @@ body:
       label: Releavnt log output
       description: Please copy and paste any relevant log output. This will be automatically formatted info code, so no need for backticks
       render: shell
-  - type: checkbox
+  - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
