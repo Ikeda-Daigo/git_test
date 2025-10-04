@@ -17,6 +17,9 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/checkout@v4
-      run: |
-        pwd
+      - name: pwd
+        run: pwd
+      - name: checkout
+        uses: actions/checkout@v5
+      - name: ls
+        run: ls -la
