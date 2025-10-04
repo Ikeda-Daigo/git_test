@@ -1,1 +1,1 @@
-[![Labeler](https://github.com/Ikeda-Daigo/git_test/actions/workflows/label.yml/badge.svg)](https://github.com/Ikeda-Daigo/git_test/actions/workflows/label.yml)
+[![Labeler](https://github.com/Ikeda-Daigo/git_test/actions/workflows/label.yml/badge.svg?branch=feature%2Fhogehoge&event=pull_request_target)](https://github.com/Ikeda-Daigo/git_test/actions/workflows/label.yml)
