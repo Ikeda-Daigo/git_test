@@ -23,5 +23,5 @@ body:
       description: |
         機能詳細について入力してください。
         参考になる画像や外部リンクがあれば添付してください。
-      validations:
-        required: true
+    validations:
+      required: true
