@@ -1,0 +1,27 @@
+name: 機能追加
+description: 本システムに追加したい機能のリクエスト
+title: "[機能追加] "
+labels: ["enhancement", "ISSUE_FORM"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        追加要望の機能について以下のフォームに沿って入力してください。
+  - type: input
+    id: feature_name
+    attributes:
+      label: 機能名概要
+      description: 追加要望の機能名を入力してください
+      placeholder: 機能名
+    validations:
+      required: true
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: 機能詳細
+      description: |
+        機能詳細について入力してください。
+        参考になる画像や外部リンクがあれば添付してください。
+      validations:
+        required: true
