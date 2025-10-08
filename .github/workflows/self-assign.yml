@@ -6,6 +6,9 @@ on:
 jobs:
     self-assign:
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: write
         steps:
           - name: NumberCheck
             run: echo ${{ github.event.number }}
@@ -14,5 +17,5 @@ jobs:
           - name: Pull Request Self Assign
             run: gh pr edit ${{ github.event.number }} --add-assignee ${{ github.actor }}
             env:
-                GH_TOKEN: ${{ github.token }}
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 GH_REPO: ${{ github.repository }}
