@@ -1,1 +1,1 @@
-console.log("初回コミット");
+console.log("action/labelerテスト");
