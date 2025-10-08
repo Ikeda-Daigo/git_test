@@ -1,0 +1,13 @@
+# action/labelerで使用
+
+Actions:
+  - changed-files:
+    - any-glob-to-any-file: .github/**
+
+JS:
+  - changed-files:
+    - any-glob-to-any-file: '**/*.js'
+
+HTML:
+  - changed-files:
+    - any-glob-to-any-file: '**/*.html'
