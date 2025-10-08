@@ -1,0 +1,21 @@
+name: Pull Request Self Assign
+on:
+    pull_request:
+        branches: [develop]
+
+jobs:
+    self-assign:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: write
+        steps:
+          - name: NumberCheck
+            run: echo ${{ github.event.number }}
+          - name: ActorCheck
+            run: echo ${{ github.actor }}
+          - name: Pull Request Self Assign
+            run: gh pr edit ${{ github.event.number }} --add-assignee ${{ github.actor }}
+            env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GH_REPO: ${{ github.repository }}
