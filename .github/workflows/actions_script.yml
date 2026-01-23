@@ -12,7 +12,13 @@ jobs:
     steps:
       - name: SendComment
         run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body "github actions botからのコメント"
+          MAX_SLOT=5
+          
+          gh pr comment ${{ github.event.pull_request.number }} --body "$(cat <<EOF
+Preview 環境の準備ができました！
+🔗 URL: $MAX_SLOT
+🎰 name: stg-pr-${{ github.event.pull_request.number }}
+EOF)"
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
