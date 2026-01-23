@@ -13,8 +13,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             await github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: 'https://github.com/Ikeda-Daigo/git_test/new/main/.github/workflows'
+              body: "🚀 Preview URL: https://..."
             });
+
