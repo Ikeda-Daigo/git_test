@@ -21,7 +21,7 @@ jobs:
 
           ℹ️ 補足
           - 本環境はこの PR 専用の一時的な検証環境です  
-          - PR が close されると自動的に削除されます  
+          - PR が close されると自動的に削除されます 
           EOF
 
           gh pr comment ${{github.event.pull_request.number }} --body-file comment.md
