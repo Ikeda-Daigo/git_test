@@ -18,7 +18,8 @@ jobs:
 Preview 環境の準備ができました！
 🔗 URL: $MAX_SLOT
 🎰 name: stg-pr-${{ github.event.pull_request.number }}
-EOF)"
+EOF
+)"
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
