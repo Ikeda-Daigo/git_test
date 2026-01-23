@@ -13,7 +13,7 @@ jobs:
       - name: SendComment
         run: |
           MAX_SLOT=5
-          URL = "https://localhost:8080"
+          URL="https://localhost:8080"
           cat  << EOF > comment.md
           🚀 **検証環境の準備が完了しました**
           🔗 URL: $URL
@@ -23,6 +23,8 @@ jobs:
           - 本環境はこの PR 専用の一時的な検証環境です  
           - PR が close されると自動的に削除されます  
           EOF
+
+          gh pr comment ${{github.event.pull_request.number }} --body-file commend.md
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
