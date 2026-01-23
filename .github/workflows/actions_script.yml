@@ -24,7 +24,7 @@ jobs:
           - PR が close されると自動的に削除されます  
           EOF
 
-          gh pr comment ${{github.event.pull_request.number }} --body-file commend.md
+          gh pr comment ${{github.event.pull_request.number }} --body-file comment.md
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
