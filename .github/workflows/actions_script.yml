@@ -13,13 +13,16 @@ jobs:
       - name: SendComment
         run: |
           MAX_SLOT=5
-          
-          gh pr comment ${{ github.event.pull_request.number }} --body "$(cat <<EOF
-Preview 環境の準備ができました！
-🔗 URL: $MAX_SLOT
-🎰 name: stg-pr-${{ github.event.pull_request.number }}
-EOF
-)"
+          URL = "https://localhost:8080"
+          cat  << EOF > comment.md
+          🚀 **検証環境の準備が完了しました**
+          🔗 URL: $URL
+          🎰 name: stg-pr-${{ github.event.pull_request.number }}
+
+          ℹ️ 補足
+          - 本環境はこの PR 専用の一時的な検証環境です  
+          - PR が close されると自動的に削除されます  
+          EOF
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
